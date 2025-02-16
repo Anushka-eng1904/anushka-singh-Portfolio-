@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <!-- Reuse your existing CSS -->
+    <style>
+     
+      /* Additions and overrides for projects.html */
+      .project-item {
+          display: none; /* Initially hide all projects */
+      }
+      .project-item.active {
+          display: flex; /*  Use flex to display. */
+      }
+      .categories {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+             <div class="navbar">
+                
+                <div class="logo-container">
+                    <img src= "d-solid (1) (1).jpg" alt="" class="logo">
+                    
+                    <div class="logo-text">ivyanshi</div>
+                </div>
+                
+                <div class="nav-items">
+                    <div><a href="index.html">Home</a></div>  <!-- Link to the projects page -->
+                    <div><a href="index.html#skills">Skills</a></div>
+                    <div><a href="index.html#contactme">Contact Me</a></div>
+                </div>
+
+            </div>
+
+            <h2 class="page-header">Projects</h2>
+
+            <div class="categories">
+                <button class="btn-pink category-btn active" data-category="all">All</button>
+                <button class="btn-pink category-btn" data-category="website">Websites</button>
+                <button class="btn-pink category-btn" data-category="game">Games</button>
+                <button class="btn-pink category-btn" data-category="app">Apps</button>
+            </div>
+
+            <div class="project-container">
+              <!-- Project items (same as before, but now on projects.html) -->
+                <div class="project-item website">
+                    <div class="project-card" id="project1">
+                        <div class="project-number project-number-right">01</div>
+                        <div class="project-content project-content-left">
+
+                            <div class="project-skills-container">
+                                <img class="project-skill" src="./images/stack/React.png" alt="" />
+                                <img class="project-skill" src="./images/stack/Tailwind.png" alt="" />
+                            </div>
+
+                            <h2 class="project-heading">Metaverse Website</h2>
+
+                            <p class="project-subHeading">A cutting-edge Metaverse web application developed using ReactJS and TailwindCSS.</p>
+                            <div class="btn-grp">
+                                <a href="https://metaverse-website-o3qj.vercel.app/" target="_blank">
+                                    <button class="btn-pink btn-project">Live Site</button>
+                                    </a>
+                               
+                                <a href="https://github.com/disha25-5/metaverse_website" target="_blank">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item website">
+                    <div class="project-card" id="project2">
+                    <div class="project-number project-number-left">02</div>
+                    <div class="project-content project-content-right">
+                        <div class="project-skills-container">
+                        <img class="project-skill" src="./images/stack/React.png" alt="" />
+                        <img class="project-skill" src="./images/stack/Tailwind.png" alt="" />
+                        </div>
+                        <h2 class="project-heading">Gaming Website</h2>
+                        <p class="project-sub-heading">
+                        A highly interactive gaming website built with ReactJS and TailwindCSS, designed to provide an engaging user experience.
+                        </p>
+                        <div class="btn-group">
+                     <a href="https://games-website-wine.vercel.app/" target="_blank">
+                        <button class="btn-pink btn-project">Live Site</button></a>
+                        <a href="https://github.com/disha25-5/games-website" target="_blank">
+                            <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                        </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="project-item app">
+                    <div class="project-card" id="project3">
+                    <div class="project-number project-number-right">03</div>
+                    <div class="project-content project-content-left">
+                        <div class="project-skills-container">
+                        <img class="project-skill" src="./images/stack/HTML.png" alt="" />
+                        <img class="project-skill" src="./images/stack/CSS.png" alt="" />
+                        <img class="project-skill" src="./images/stack/Javascript.svg" alt="" />
+                        </div>
+        
+                        <h2 class="project-heading">Real Time Weather App</h2>
+                        <p class="project-sub-heading">
+                        A responsive weather application developed using HTML, CSS, JavaScript, and the Weather API
+                        </p>
+                        <div class="btn-group">
+                        <a href="https://weather-app-8u8n.vercel.app/" target="_blank">
+                        <button class="btn-pink btn-project">Live Site</button></a>
+                        <a href="https://github.com/disha25-5/weather-app" target="_blank">
+                            <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                        </a>
+                       
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="project-item app">
+                    <div class="project-card" id="project4">
+                    <div class="project-number project-number-left">04</div>
+                    <div class="project-content project-content-right">
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./images/stack/HTML.png" alt="" />
+                            <img class="project-skill" src="./images/stack/CSS.png" alt="" />
+                            <img class="project-skill" src="./images/stack/Javascript.svg" alt="" />
+                        </div>
+                        <h2 class="project-heading">Calculator</h2>
+                        <p class="project-sub-heading">
+                            A responsive, interactive calculator built with HTML5 and JavaScript, supporting basic arithmetic operations.
+                        </p>
+                        <div class="btn-group">
+                    <a href="https://calculater-ftud.vercel.app/" target="_blank">
+                        <button class="btn-pink btn-project">Live Site</button></a>
+                        <a href="https://github.com/disha25-5/calculater" target="_blank">
+                            <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                        </a>
+                      
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="project-item app">
+                    <div class="project-card" id="project5">
+                    <div class="project-number project-number-right">05</div>
+                    <div class="project-content project-content-left">
+                        <div class="project-skills-container">
+                        <img class="project-skill" src="./images/stack/HTML.png" alt="" />
+                            <img class="project-skill" src="./images/stack/CSS.png" alt="" />
+                            <img class="project-skill" src="./images/stack/Javascript.svg" alt="" />
+                        </div>
+                        <h2 class="project-heading">Analog Clock</h2>
+                        <p class="project-sub-heading">
+                        A fully functional analog clock built with HTML, CSS, and JavaScript. 
+                        </p>
+                        <div class="btn-group">
+                      <a href="https://analog-clock-3m5k.vercel.app/" target="_blank">
+                        <button class="btn-pink btn-project">Site Here</button>   </a>
+                        <a href="https://github.com/disha25-5/analog-clock" target="_blank">
+                            <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                        </a>
+                        
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="project-item app">
+                <div class="project-card" id="project6">
+                <div class="project-number project-number-left">06</div>
+                    <div class="project-content project-content-right">
+                    <div class="project-skills-container">
+                        <img class="project-skill" src="./images/stack/HTML.png" alt="" />
+                    <img class="project-skill" src="./images/stack/CSS.png" alt="" />
+                    <img class="project-skill" src="./images/stack/Javascript.svg" alt="" />
+                    </div>
+                    <h2 class="project-heading">To-Do List</h2>
+                    <p class="project-sub-heading">
+                        An interactive to-do list app built with HTML, CSS, and JavaScript.
+                    </p>
+                    <div class="btn-group">
+                        <a href="https://to-do-list-lmdj.vercel.app/" target="_blank">
+                        <button class="btn-pink btn-project">Live Site</button></a>
+                        <a href="https://github.com/disha25-5/to-do-list" target="_blank">
+                        <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                        </a>
+                    
+                </div>
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    <script>
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+
+                projectItems.forEach(item => {
+                    if (category === 'all' || item.classList.contains(category)) {
+                        item.classList.add('active'); //  Add active class
+                    } else {
+                        item.classList.remove('active'); //  Remove active
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
