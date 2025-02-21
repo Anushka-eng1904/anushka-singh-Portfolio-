@@ -12,9 +12,9 @@ body {
   padding: 0;
   font-family: "Be Vietnam Pro", sans-serif;
   scroll-behavior: smooth;
-  font-size: 16px; /*  Base font size for better responsiveness */
-  line-height: 1.6; /*  Improve readability */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  font-size: 16px; /* Base font size */
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 :root {
@@ -22,14 +22,14 @@ body {
 }
 
 #wrapper {
-  min-height: 100vh; /*  Use min-height for content to fill the screen */
-  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
 .container {
-  width: 90%; /*  Adjust container width for smaller screens */
-  max-width: 1200px; /*  Maximum container width */
-  margin: 0 auto; /* Center the container */
+  width: 90%; /* Default for smaller screens */
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1rem;
 }
 
@@ -51,20 +51,20 @@ body {
 
 .logo-text {
   margin-left: 0.5rem;
-  font-size: 1.75rem; /*  Adjust font size */
+  font-size: 1.75rem;
   font-weight: 500;
   color: gray;
 }
 
 .nav-items {
   display: flex;
-  gap: 1rem; /*  Reduce gap for smaller screens */
-  padding: 0; /* Remove padding */
-  list-style: none; /* Remove bullet points */
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
 }
 
 .nav-items li {
-  font-size: 1.2rem; /*  Adjust font size */
+  font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
 }
@@ -72,25 +72,25 @@ body {
 .nav-items li a {
   color: black;
   text-decoration: none;
-  display: block; /*  Make links fill the entire list item */
-  padding: 0.5rem 1rem; /* Add padding for better touch area */
+  display: block;
+  padding: 0.5rem 1rem;
 }
 
 .nav-items li:hover {
   font-weight: bold;
-  transition: all 0.3s ease; /*  Soften the transition */
+  transition: all 0.3s ease;
 }
 
-/* Hero Section */
+/* Hero Section - Default (Mobile) */
 .hero-section {
   position: relative;
   display: flex;
-  flex-direction: column; /* Stack elements on smaller screens */
+  flex-direction: column;
   align-items: center;
-  gap: 2rem; /* Adjust gap */
-  margin: 2rem auto; /* Adjust margin */
+  gap: 2rem;
+  margin: 2rem auto;
   padding: 0;
-  text-align: center; /* Center text on smaller screens */
+  text-align: center;
 }
 
 .faded-text {
@@ -100,7 +100,7 @@ body {
   color: rgb(231, 231, 231);
   bottom: -10%;
   left: 50%;
-  transform: translateX(-50%); /* Center the text */
+  transform: translateX(-50%);
   font-weight: bold;
   transition: all 0.5s ease;
 }
@@ -315,13 +315,13 @@ body {
 
 .project-card {
   width: 100%;
-  height: auto; /*  Adjust height for content */
-  min-height: 300px; /*  Minimum height */
+  height: auto;
+  min-height: 300px;
   background-size: cover;
   background-position: center;
   position: relative;
   box-shadow: 0px 0px 20px #1f1f1f;
-  overflow: hidden; /*  Hide overflowing content */
+  overflow: hidden;
 }
 
 .project-card::after {
@@ -715,81 +715,101 @@ footer {
   height: 300px;
 }
 
-/* Media Queries for Responsiveness */
-@media (min-width: 768px) {
+/* Media Queries for Larger Screens (Laptops) */
+@media (min-width: 992px) { /* Adjust breakpoint as needed */
+  .container {
+    width: 80%; /* Restore larger container width */
+  }
+
+  /* Hero Section - Laptop Layout */
   .hero-section {
-    flex-direction: row;
-    text-align: left;
+    flex-direction: row; /* Restore horizontal layout */
+    text-align: left; /* Restore left alignment */
+    align-items: center;
+    gap: 5rem;
+    margin: 4rem auto;
+    padding-bottom: 8rem;
   }
 
   .hero-section-left {
     width: 50%;
+    gap: 2rem;
+  }
+
+  .hero-section-heading {
+    font-size: 35px;
+  }
+
+  .hero-section-sub-heading {
+    font-size: 45px;
+    line-height: 45px;
   }
 
   .hero-section-description {
-    width: 80%;
+    width: 70%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .faded-text {
     font-size: 7em;
-    bottom: -15%;
+    bottom: -15.8%;
     left: -5%;
     transform: none;
   }
 
-  .project-container {
-    padding: 3rem 0;
-    gap: 6rem;
+  .hero-image img {
+    width: 270px; /* Or whatever the original width was */
   }
+    /*skill container*/
+    .skills-container {
+        flex-direction: row;
+        padding: 5rem;
+        margin: 10rem auto;
 
-  .project-card {
-    height: 400px;
-  }
+    }
 
-  .project-content {
-    bottom: 20%;
-    text-align: left;
-  }
+    .skill-container-left {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
 
-  .project-content-left {
-    left: 10%;
-  }
+    .skill-container-right {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        width: 50%;
+        max-width: 700px;
+        /* adjust to your liking */
+        position: relative;
+        padding: 1rem;
+        /* adjust to your liking */
+        justify-items: center;
+        margin: 0 auto;
+    }
+    /*Project container*/
+    .project-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 0;
 
-  .project-content-right {
-    right: 10%;
-  }
-
-  .skills-container {
-    flex-direction: row;
-    padding: 5rem;
-  }
-
-  .skill-container-left {
-    width: 50%;
-  }
-
-  .skill-container-right {
-    max-width: 700px;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .form {
-    width: 70%;
-    margin: 2rem 5rem;
-  }
-
-  .footer-wrapper {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-/*  Larger screens */
-@media (min-width: 1200px) {
-  .container {
-    width: 80%;
-  }
+        display: flex;
+        flex-direction: column;
+        gap: 120px;
+    }
+       /*project container*/
+       .project-content {
+           position: absolute;
+           display: flex;
+           flex-direction: column;
+           color: white;
+           padding: 2em;
+           bottom: 20%;
+           z-index: 5;
+           gap: 1em;
+           transition: all 0.4s;
+       }
 }
 /* scro0l bar */
 ::-webkit-scrollbar {
