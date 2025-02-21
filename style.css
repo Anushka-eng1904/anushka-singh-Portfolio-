@@ -719,6 +719,7 @@ footer {
   width: 300px;
   height: 300px;
 }
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   /* General adjustments for smaller screens */
@@ -836,6 +837,7 @@ footer {
     }
 
     .project-card {
+        width: 100%;
         height: auto;
         box-shadow: 0px 0px 20px #1f1f1f;
     }
@@ -875,6 +877,40 @@ footer {
         font-size: 1.5em;
     }
 }
+
+/* Modifications to address specific issues */
+
+/* Ensure .icon-wrapper is displayed */
+.icon-wrapper {
+  display: flex; /* Ensure it's displayed */
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Ensure all categories are visible */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Allow items to wrap if there's not enough space */
+}
+
+.category-btn {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem; /* Increased padding */
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.category-btn.active {
+    background-color: var(--bgOrange);
+    color: white;
+}
+
 /* scro0l bar */
 ::-webkit-scrollbar {
   width: 10px;
