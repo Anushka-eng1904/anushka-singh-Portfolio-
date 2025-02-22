@@ -38,15 +38,28 @@ form.addEventListener('submit', (e) => {
     return; 
   }
  
+//   fetch('/contact', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({ name, email, subject, message }),
+//   })
+//     .then((response) => response.json())
+//     .then((data) => console.log(data))
+//     .catch((error) => console.error(error));
+// });
   fetch('/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email, subject, message }),
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name, email, subject, message }),
+})
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
   })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error(error));
-});
+  .then((data) => console.log(data))
+  .catch((error) => console.error('Error:', error));
 // ... Your existing JavaScript (Typed.js, etc.) ...
 const navToggle = document.querySelector('.nav-toggle');
 const navItems = document.querySelector('.nav-items');
