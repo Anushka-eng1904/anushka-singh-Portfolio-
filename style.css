@@ -12,9 +12,9 @@ body {
   padding: 0;
   font-family: "Be Vietnam Pro", sans-serif;
   scroll-behavior: smooth;
-  font-size: 16px; /*  Base font size for better responsiveness */
-  line-height: 1.6; /*  Improve readability */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  font-size: 16px; /* Base font size */
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 :root {
@@ -22,22 +22,21 @@ body {
 }
 
 #wrapper {
-  min-height: 100vh; /*  Use min-height for content to fill the screen */
-  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  height: 100vh; /* important for initial layout*/
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .container {
-  width: 90%; /*  Adjust container width for smaller screens */
-  max-width: 1200px; /*  Maximum container width */
-  margin: 0 auto; /* Center the container */
-  padding: 1rem;
+  width: 1200px; /* Your original container width */
+  margin: 0 auto;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding-top: 1rem;
 }
 
 .logo {
@@ -46,74 +45,76 @@ body {
 
 .logo-container {
   display: flex;
+  justify-content: baseline;
   align-items: center;
 }
 
 .logo-text {
-  margin-left: 0.5rem;
-  font-size: 1.75rem; /*  Adjust font size */
+  margin-left: 0.2rem;
+  font-size: 28px;
   font-weight: 500;
   color: gray;
 }
 
 .nav-items {
   display: flex;
-  gap: 1rem; /*  Reduce gap for smaller screens */
-  padding: 0; /* Remove padding */
-  list-style: none; /* Remove bullet points */
+  gap: 2rem;
+  padding: 0 4em;
 }
 
-.nav-items li {
-  font-size: 1.2rem; /*  Adjust font size */
+.nav-items div {
+  font-size: 20px;
   font-weight: 500;
   cursor: pointer;
 }
 
-.nav-items li a {
+.nav-items div a {
   color: black;
-  text-decoration: none;
-  display: block; /*  Make links fill the entire list item */
-  padding: 0.5rem 1rem; /* Add padding for better touch area */
+  /* transition: all 5s ease; */
 }
 
-.nav-items li:hover {
+a {
+  text-decoration: none;
+}
+
+.nav-items div:hover {
+  transition: 0.8s;
   font-weight: bold;
-  transition: all 0.3s ease; /*  Soften the transition */
 }
 
 /* Hero Section */
 .hero-section {
   position: relative;
   display: flex;
-  flex-direction: column; /* Stack elements on smaller screens */
+  justify-content: center;
   align-items: center;
-  gap: 2rem; /* Adjust gap */
-  margin: 2rem auto; /* Adjust margin */
-  padding: 0;
-  text-align: center; /* Center text on smaller screens */
+  gap: 5rem;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  padding-bottom: 8rem;
 }
 
 .faded-text {
   position: absolute;
   user-select: none;
-  font-size: 4em;
+  font-size: 7em;
   color: rgb(231, 231, 231);
-  bottom: -10%;
-  left: 50%;
-  transform: translateX(-50%); /* Center the text */
+  bottom: -15.8%;
+  left: -5%;
   font-weight: bold;
-  transition: all 0.5s ease;
+  transition: all 3s;
 }
 
 .hero-section-left {
+  /* width:100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .hero-section-heading {
-  font-size: 1.75rem;
+  font-size: 35px;
   color: #343d68;
   font-weight: 500;
 }
@@ -124,26 +125,25 @@ body {
 }
 
 .hero-section-sub-heading {
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 45px;
+  line-height: 45px;
 }
 
 .hero-section-description {
-  margin-top: 0.5rem;
-  width: 90%;
+  margin-top: 1rem;
+  width: 70%;
   font-weight: 500;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .btn-pink {
   background-color: var(--bgOrange);
+  width: fit-content;
   color: white;
-  padding: 0.5rem 1.5rem;
-  box-shadow: 2px 2px 5px 0px #0000003f;
-  font-size: 1rem;
+  padding: 0.8rem 2.3rem;
+  box-shadow: 5px 5px 7px 0px #0000003f;
+  font-size: 18px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s;
   font-weight: 500;
   border: solid 3px transparent;
   position: relative;
@@ -155,14 +155,14 @@ body {
   content: "";
   position: absolute;
   background-color: #fff;
-  top: 0;
+  top: 0px;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 0px;
   z-index: -1;
   transform: scaleX(0);
   transform-origin: left;
-  transition: all 0.3s ease;
+  transition: all 0.8s;
 }
 
 .btn-pink:hover::before {
@@ -175,7 +175,6 @@ body {
 }
 
 .hero-section-right {
-  margin-top: 2rem;
   position: relative;
 }
 
@@ -184,14 +183,14 @@ body {
 }
 
 .hero-image {
-  padding: 1.5rem;
+  padding: 2.5rem;
   filter: grayscale(1);
-  transition: all 0.3s ease;
+  transition: all 1s;
   animation: scaleImage 5s linear infinite;
 }
 
 .hero-image img {
-  width: 200px;
+  width: 270px;
   z-index: -9;
 }
 
@@ -213,9 +212,11 @@ body {
 
 .icon-dots {
   z-index: 9;
-  bottom: -0.5rem;
+  bottom: -1rem;
   right: 0;
-  animation: dotsAnimation 5s linear infinite;
+  animation-name: dotsAnimation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes dotsAnimation {
@@ -223,7 +224,7 @@ body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
   100% {
     transform: translateY(0px);
@@ -232,9 +233,11 @@ body {
 
 .icon-cube {
   z-index: 9;
-  top: -0.5em;
-  right: 0.5em;
-  animation: cubeRotate 3s linear infinite;
+  top: -0.8em;
+  right: 1em;
+  animation-name: cubeRotate;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes cubeRotate {
@@ -242,7 +245,7 @@ body {
     transform: rotateY(0deg) translateY(0px);
   }
   50% {
-    transform: rotateY(180deg) translateY(-8px);
+    transform: rotateY(180deg) translateY(-12px);
   }
   100% {
     transform: rotateY(360deg) translateY(0px);
@@ -253,7 +256,10 @@ body {
   z-index: 9;
   left: 0;
   bottom: 0;
-  animation: shakeEffect 6s linear infinite;
+  animation-name: shakeEffect;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 @keyframes shakeEffect {
@@ -265,8 +271,8 @@ body {
 
 .icon-zigzag {
   z-index: 9;
-  top: 1em;
-  left: -0.2em;
+  top: 1.5em;
+  left: -0.3em;
   animation: zigzagAnimation 5s ease-in infinite;
 }
 
@@ -276,10 +282,9 @@ body {
     top: 2%;
   }
 }
-
 .icon-plus {
   z-index: 9;
-  top: -0.5rem;
+  top: -0.8rem;
   left: 50%;
   animation: shakeEffectPlus 5s ease-in infinite;
 }
@@ -294,34 +299,38 @@ body {
 /* Project Section */
 .project-section {
   background-color: rgb(231, 231, 231);
-  padding: 2rem 0;
+  margin-top: 4rem;
 }
 
 .page-header {
   color: var(--bgOrange);
-  font-size: 2.5rem;
+  font-size: 90px;
   text-align: center;
-  margin-bottom: 1rem;
+  padding-top: 30px;
 }
 
+/* Apply the grid layout to the project container */
 .project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Responsive grid */
+  gap: 120px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  padding: 3rem 0;
+}
+
+/* Ensure project items fill their grid cells */
+.project-item {
+    width: 100%; /* Take full width of the grid cell */
 }
 
 .project-card {
-  width: 100%;
-  height: auto; /*  Adjust height for content */
-  min-height: 300px; /*  Minimum height */
+  width: 90%;
+  height: 550px;
   background-size: cover;
-  background-position: center;
+  /* background-repeat: no-repeat; */
   position: relative;
-  box-shadow: 0px 0px 20px #1f1f1f;
-  overflow: hidden; /*  Hide overflowing content */
+  box-shadow: 0px 0px 40px #1f1f1f;
 }
 
 .project-card::after {
@@ -333,6 +342,7 @@ body {
   bottom: 0;
   background-color: #1f1f1f9a;
   z-index: 0;
+  /* transform: scaleX(1); */
 }
 
 .project-card::before {
@@ -345,7 +355,7 @@ body {
   background: linear-gradient(45deg, #343d68, #343d68be, #343d687c);
   transform: scaleX(0);
   transform-origin: left;
-  transition: all 0.4s ease;
+  transition: all 0.4s;
   z-index: 1;
 }
 
@@ -355,26 +365,27 @@ body {
 
 .project-number {
   position: absolute;
-  font-size: 6rem;
+  font-size: 200px;
   font-weight: 600;
   color: white;
   z-index: 10;
+  /* display:none; */
   opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .project-card:hover .project-number {
+  /* display:block; */
   opacity: 1;
 }
 
 .project-number-right {
-  right: -1rem;
-  top: -1rem;
+  right: -40px;
+  top: -45px;
 }
 
 .project-number-left {
-  left: -1rem;
-  top: -1rem;
+  left: -40px;
+  top: -45px;
 }
 
 .project-content {
@@ -382,56 +393,48 @@ body {
   display: flex;
   flex-direction: column;
   color: white;
-  padding: 1rem;
-  bottom: 10%;
+  padding: 2em;
+  bottom: 20%;
   z-index: 5;
-  gap: 0.5rem;
-  transition: all 0.4s ease;
-  width: 100%;
-  text-align: center;
+  gap: 1em;
+  transition: all 0.4s;
 }
 
 .project-content-left {
-  left: 0;
+  left: 10%;
 }
 
 .project-content-right {
-  right: 0;
+  right: 10%;
 }
 
 .project-skills-container {
-  width: 100%;
+  width: 60%;
   display: flex;
-  gap: 0.5rem;
+  gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .project-skill {
-  width: 30px;
+  width: 40px;
 }
 
 .project-heading {
-  font-size: 1.5rem;
+  font-size: 50px;
   font-weight: bold;
-  line-height: 1.2rem;
+  line-height: 3rem;
 }
 
 .project-subHeading {
-  width: 100%;
-  font-size: 0.8rem;
+  width: 70%;
+  font-size: 16px;
   font-style: italic;
 }
 
 .btn-grp {
   display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-top: 0.5rem;
-}
-
-.btn-project {
-  border: none;
+  gap: 0.9rem;
+  align-items: center;
 }
 
 .btn-project:hover {
@@ -441,8 +444,8 @@ body {
 .icon {
   cursor: pointer;
   color: white;
-  font-size: 1.5rem;
-  transition: all 0.4s ease;
+  font-size: 35px;
+  transition: all 0.4s;
 }
 
 .icon:hover {
@@ -450,86 +453,89 @@ body {
 }
 
 .project-card:hover .project-content {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
-/* Project Background Images */
 #project1 {
   background-image: url(./images/projects/Project1.jpeg);
 }
 
 #project2 {
+  margin-left: 120px;
   background-image: url(./images/projects/Project2.png);
 }
-
 #project3 {
   background-image: url(./images/projects/Project3.jpeg);
 }
-
 #project4 {
+  margin-left: 120px;
   background-image: url(./images/projects/Project4.jpeg);
 }
-
 #project5 {
   background-image: url(./images/projects/Project5.jpeg);
 }
-
 #project6 {
+  margin-left: 120px;
   background-image: url(./images/projects/Project6.jpeg);
 }
 #project7{
   background-image: url(./images/projects/Project7.jpeg);
 }
 #project8{
-   
-   background-image: url(./images/projects/Project8.jpeg);
+  margin-left: 120px;
+  background-image: url(./images/projects/Project8.jpeg);
 }
 #project9{
   background-image: url(./images/projects/Project9.jpeg);
 }
 #project10{
-   
-   background-image: url(./images/projects/Project10.jpeg);
+  margin-left: 120px;
+  background-image: url(./images/projects/Project10.jpeg);
 }
-
-/* Skills Section */
 .skills-container {
   position: relative;
   display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  margin: 4rem auto;
-  gap: 1rem;
+  padding: 5rem;
+  margin: 10rem auto;
+  gap: 30px;
 }
 
 .skill-container-left {
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
 
+/* .skill-container-right{
+  display:flex;
+  flex-wrap:wrap;
+  width:50%;
+  position:relative;
+  gap:2rem;
+  justify-content: center;
+} */
 .skill-container-right {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 1rem;
-  width: 100%;
-  max-width: 400px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 50%;
+  max-width: 700px;
+  /* adjust to your liking */
   position: relative;
-  padding: 0.5rem;
+  padding: 1rem;
+  /* adjust to your liking */
   justify-items: center;
   margin: 0 auto;
 }
-
 .skill-fade-text {
   position: absolute;
-  font-size: 5em;
+  font-size: 15em;
   font-style: bold;
   color: rgb(231, 231, 231);
-  bottom: -15%;
-  right: -5%;
+  bottom: -27.5%;
+  right: -6%;
   user-select: none;
 }
-
 .blob-style {
   position: absolute;
   top: 50%;
@@ -547,8 +553,8 @@ body {
 }
 
 .skills-logo {
-  width: 60px;
-  transition: all 0.3s ease;
+  width: 110px;
+  transition: all 0.5s;
 }
 
 .skills-logo:hover {
@@ -556,54 +562,61 @@ body {
 }
 
 .skill-heading {
-  font-size: 2rem;
+  font-size: 50px;
   font-style: bold;
   color: var(--bgOrange);
-  line-height: 2rem;
+  line-height: 50px;
 }
 
 .caps {
-  font-size: 3rem;
+  font-size: 90px;
 }
 
 .skill-subHeading {
-  margin-top: 0.5rem;
-  width: 100%;
+  margin-top: 1rem;
+  width: 85%;
   text-align: justify;
 }
 
 .skill-subHeading p {
-  margin: 0.5rem 0;
+  margin: 15px 0;
 }
 
-/* Contact Us Section */
+/* .contactus-form-container{
+  width:100%;
+  background-color: rgb(231,231,231);
+}
+/*  ... Your existing CSS ... */
 .contactus-form-container {
   width: 100%;
   background-color: rgb(231, 231, 231);
-  padding: 2rem 0;
 }
 
 .contactus-heading {
-  font-size: 3em;
+  font-size: 5em;
   color: var(--bgOrange);
-  padding-top: 1rem;
-  text-align: center;
+  padding-top: 2rem;
 }
 
 .contactus-sub-heading {
-  font-size: 1.5rem;
+  font-size: 3rem;
   color: #343d68aa;
   text-transform: capitalize;
-  text-align: center;
+}
+
+.contactus-form-container {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  width: 90%;
-  max-width: 600px;
-  margin: 2rem auto;
+  gap: 30px;
+  width: 70%;
+  margin: 2rem 5rem;
 }
 
 .formfield-container {
@@ -613,48 +626,47 @@ body {
 .formfield {
   width: 100%;
   height: 42px;
-  padding: 0 1rem;
-  font-size: 1rem;
+  padding: 0 2rem;
+  font-size: 18px;
   border-radius: 5px;
   box-shadow: 2px 2px 10px #1f1f1f;
   font-weight: 500;
   border: none;
-  margin-top: 0.5rem;
+  margin-top: 27px;
 }
 
 .formfield-textarea {
   height: auto;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
 }
 
 #submit-btn {
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin: 1rem 0;
 }
 
 #submit-btn:hover {
-  scale: 0.95;
+  scale: 0.9;
 }
 
 .submit-icon {
-  padding: 0 0.5rem;
-  font-size: 1.2rem;
+  padding: 0 1rem;
+  font-size: 1.5rem;
 }
 
-/* Footer */
 footer {
   position: relative;
+  margin-top: -1px;
   background-color: #343d68;
-  padding: 2rem;
-  text-align: center;
+  padding: 5rem;
 }
 
 .footer-wrapper {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.2rem;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -664,18 +676,18 @@ footer {
   bottom: 0;
   color: #535c87;
   user-select: none;
-  font-size: 3em;
+  font-size: 5em;
 }
 
 .link-wrapper {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .link-wrapper div a {
   color: white;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.6s;
 }
 
 .link-wrapper div a:hover {
@@ -684,8 +696,9 @@ footer {
 
 .icon-wrapper {
   display: flex;
-  gap: 0.5rem;
-  justify-content: center;
+  gap: 1rem;
+    z-index: 100; /* Ensure it's above other elements */
+    position: relative; /* Establishes a positioning context */
 }
 /* Style for category buttons (optional, if you want different styling) */
 .categories {
