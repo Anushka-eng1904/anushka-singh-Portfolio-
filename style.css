@@ -837,7 +837,6 @@ footer {
     }
 
     .project-card {
-        width: 100%;
         height: auto;
         box-shadow: 0px 0px 20px #1f1f1f;
     }
@@ -910,7 +909,36 @@ footer {
     background-color: var(--bgOrange);
     color: white;
 }
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Responsive grid */
+    gap: 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
 
+/* Ensure project items fill their grid cells */
+.project-item {
+    width: 100%; /* Take full width of the grid cell */
+}
+
+.project-card {
+    height: 550px; /* Restore height for the card to maintain aspect ratio */
+}
+
+/* Make sure the project cards line up correctly by ensuring that they are all the same size and have the same padding and margins */
+.project-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+    bottom: 20%;
+    z-index: 5;
+    gap: 1em;
+    transition: all 0.4s;
+}
 /* scro0l bar */
 ::-webkit-scrollbar {
   width: 10px;
