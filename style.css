@@ -81,13 +81,7 @@ a {
   transition: 0.8s;
   font-weight: bold;
 }
-.icon-wrapper {
-  display: flex; /* Ensure it's displayed */
-  gap: 1rem;
-  justify-content: center;
-  z-index: 100; /* Ensure it's above other elements */
-  position: relative; /* Establishes a positioning context */
-}
+
 
 /* Hero Section */
 .hero-section {
@@ -895,12 +889,19 @@ footer {
 /* Modifications to address specific issues */
 
 /* Ensure .icon-wrapper is displayed */
+/* .icon-wrapper {
+  display: flex; /* Ensure it's displayed */
+/*   gap: 1rem;
+  justify-content: center;
+}
+ */ 
 .icon-wrapper {
   display: flex; /* Ensure it's displayed */
   gap: 1rem;
   justify-content: center;
+  z-index: 100; /* Ensure it's above other elements */
+  position: relative; /* Establishes a positioning context */
 }
-
 /* Ensure all categories are visible */
 .categories {
   display: flex;
