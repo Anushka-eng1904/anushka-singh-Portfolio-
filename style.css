@@ -81,6 +81,13 @@ a {
   transition: 0.8s;
   font-weight: bold;
 }
+.icon-wrapper {
+  display: flex; /* Ensure it's displayed */
+  gap: 1rem;
+  justify-content: center;
+  z-index: 100; /* Ensure it's above other elements */
+  position: relative; /* Establishes a positioning context */
+}
 
 /* Hero Section */
 .hero-section {
@@ -308,8 +315,15 @@ a {
   text-align: center;
   padding-top: 30px;
 }
+/* .project-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 0;
 
-/* Apply the grid layout to the project container */
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+} */
 .project-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Responsive grid */
@@ -317,11 +331,6 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 0;
-}
-
-/* Ensure project items fill their grid cells */
-.project-item {
-    width: 100%; /* Take full width of the grid cell */
 }
 
 .project-card {
@@ -697,8 +706,6 @@ footer {
 .icon-wrapper {
   display: flex;
   gap: 1rem;
-    z-index: 100; /* Ensure it's above other elements */
-    position: relative; /* Establishes a positioning context */
 }
 /* Style for category buttons (optional, if you want different styling) */
 .categories {
@@ -729,80 +736,223 @@ footer {
 }
 
 /* Media Queries for Responsiveness */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  /* General adjustments for smaller screens */
+  .container {
+    width: 95%; /* Take up more space */
+  }
+
+  /* Hero Section: Stack elements and center text */
   .hero-section {
-    flex-direction: row;
-    text-align: left;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem; /* Reduced gap */
+    margin: 2rem auto;
+    padding: 0;
+    padding-bottom: 4rem;
   }
 
   .hero-section-left {
-    width: 50%;
+    width: 100%;
   }
 
   .hero-section-description {
-    width: 80%;
+    width: 90%;
+    margin: 1rem auto;
   }
 
   .faded-text {
-    font-size: 7em;
-    bottom: -15%;
-    left: -5%;
-    transform: none;
+    font-size: 4em;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .project-container {
-    padding: 3rem 0;
-    gap: 6rem;
-  }
-
-  .project-card {
-    height: 400px;
-  }
-
-  .project-content {
-    bottom: 20%;
-    text-align: left;
-  }
-
-  .project-content-left {
-    left: 10%;
-  }
-
-  .project-content-right {
-    right: 10%;
-  }
-
+  /* Skill Section: Adjust layout */
   .skills-container {
-    flex-direction: row;
-    padding: 5rem;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 2rem auto;
+    gap: 1rem;
   }
 
   .skill-container-left {
-    width: 50%;
+    width: 100%;
   }
 
   .skill-container-right {
-    max-width: 700px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /*Responsive grid */
+    width: 100%;
+    max-width: none;
+    margin: 0;
   }
 
+  .skill-fade-text {
+    font-size: 8em;
+    bottom: -15%;
+    right: -10%;
+  }
+
+  /* Project Section: Adjust card layout */
+  .project-container {
+    gap: 4rem;
+  }
+
+  .project-card {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .project-content {
+    bottom: 10%;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .project-content-left,
+  .project-content-right {
+    left: auto;
+    right: auto;
+  }
+
+  /* Contact Form: Adjust width */
   .form {
-    width: 70%;
-    margin: 2rem 5rem;
+    width: 90%;
+    margin: 2rem auto;
   }
 
+  /* Footer */
   .footer-wrapper {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
     align-items: center;
   }
+
+  .footer-faded-text {
+    font-size: 3em;
+    bottom: 0;
+    left: 0;
+    position: static;
+    text-align: center;
+  }
+    .project-section {
+        margin-top: 2rem;
+    }
+
+    .page-header {
+        font-size: 4em;
+        padding-top: 1rem;
+    }
+
+    .project-container {
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    .project-card {
+        height: auto;
+        box-shadow: 0px 0px 20px #1f1f1f;
+    }
+
+    .project-number {
+        font-size: 4em;
+        top: -2em;
+    }
+
+    .project-content {
+        padding: 1em;
+        bottom: 5%;
+    }
+
+    .project-heading {
+        font-size: 2em;
+    }
+
+    .project-subHeading {
+        font-size: 1em;
+    }
+
+    .project-skills-container {
+        width: 100%;
+        gap: 0.5em;
+    }
+
+    .project-skill {
+        width: 30px;
+    }
+
+    .btn-grp {
+        gap: 0.5em;
+    }
+
+    .icon {
+        font-size: 1.5em;
+    }
 }
 
-/*  Larger screens */
-@media (min-width: 1200px) {
-  .container {
-    width: 80%;
-  }
+/* Modifications to address specific issues */
+
+/* Ensure .icon-wrapper is displayed */
+.icon-wrapper {
+  display: flex; /* Ensure it's displayed */
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Ensure all categories are visible */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Allow items to wrap if there's not enough space */
+}
+
+.category-btn {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem; /* Increased padding */
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.category-btn.active {
+    background-color: var(--bgOrange);
+    color: white;
+}
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Responsive grid */
+    gap: 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+/* Ensure project items fill their grid cells */
+.project-item {
+    width: 100%; /* Take full width of the grid cell */
+}
+
+.project-card {
+    height: 550px; /* Restore height for the card to maintain aspect ratio */
+}
+
+/* Make sure the project cards line up correctly by ensuring that they are all the same size and have the same padding and margins */
+.project-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+    bottom: 20%;
+    z-index: 5;
+    gap: 1em;
+    transition: all 0.4s;
 }
 /* scro0l bar */
 ::-webkit-scrollbar {
