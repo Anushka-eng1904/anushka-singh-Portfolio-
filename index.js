@@ -6,7 +6,6 @@
 //   const email = document.getElementById('email').value;
 //   const subject = document.getElementById('subject').value;
 //   const message = document.getElementById('message').value;
-
 //   // Check if all fields are filled inhttps://github.com/Anushka-eng1904/anushka-singh-Portfolio-/blob/main/index.js
 //   if (!name || !email || !subject || !message) {
 //     alert('Please fill in all fields');
